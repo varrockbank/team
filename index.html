@@ -29,9 +29,14 @@
         }
 
         .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 48px 24px;
+            max-width: 1200px;
+            margin: 0;
+            padding: 48px 24px 48px 100px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         /* Typography */
@@ -183,7 +188,7 @@
 
         @media (max-width: 600px) {
             body { font-size: 16px; }
-            .container { padding: 32px 16px; }
+            .container { padding: 32px 16px 32px 16px; }
             h1 { font-size: 1.6rem; }
             h2 { font-size: 1.25rem; margin: 36px 0 12px; padding-top: 20px; }
             h3 { font-size: 1.05rem; }
@@ -403,17 +408,18 @@
         </p>
 
         <p>
-            This workstream involves working on Large Scale Batch Processing data pipeline. 
+            This workstream involves working on data pipeline.
             The repository is here: <a href="https://github.com/varrockbank/equityzukan">https://github.com/varrockbank/equityzukan</a>. 
-            It'll be a giant directed-acyclic-graph where you add a node that collects or transform data. 
-            Data collection might involve a program that pulls weather data from a government source or a social media website.
+            You may have heard of MapReduce. The current implementation uses the <a href="https://spark.apache.org/">Apache Spark</a>
+            framework. The orchestrator is <a href="https://airflow.apache.org/">Apache Airflow</a>. You can see 
+            this tech stack is aligned with Data Engineering at Optiver: <a href="https://optiver.com/working-at-optiver/career-opportunities/8206990002/?gh_src=6lx5qioq2us">Data Engineer (Commodities)</a>
         </p>
 
         <img src="assets/etl.png">
 
         <h2>Workstream #5: Language ecosystem and Compilers</h2>
 
-        <p>JavaScript will be the DSL (domain specific language) for algo trading. JavaScript is the most popular programming language in the world, yet there's no finance ecosystem or "mindshare" around it, yet.
+        <p>JavaScript will be the DSL (<a href="https://en.wikipedia.org/wiki/Domain-specific_language">domain specific language</a>) for algo trading. JavaScript is the most popular programming language in the world, yet there's no finance ecosystem or "mindshare" around it, yet.
             There are millions of webdevs who'd try algo trading if the barrier were lower.
         </p>
 
@@ -437,7 +443,7 @@
         <h3>Compilers</h3>
 
         <p>Another workstream: taking users' JavaScript algos and converting them to something fast&mdash;C++ (lingua franca of quant finance) or Rust (gaining popularity) 
-            when we actually execute in the real world. This is compilers work. It's worth pointing out that most of Jane Street's technical interns work on language/compilers projects.</p>
+            when we actually execute in the real world. This is compilers work. It's worth pointing out that most of Jane Street's technical interns work on language/compilers projects: <a href="https://blog.janestreet.com/wrought-2025/">https://blog.janestreet.com/wrought-2025/</a></p>
         </aside>
 
         <h3>C++</h3>
@@ -455,12 +461,16 @@
         
     <h2>Workstream #6: Level3</h2>
     <p>
-        This is the most granular market data. It is tick-by-tick and individual trades.
-        The simulator aggregate prices and volume, but tick data allows us to reproduce the orderbook 
-        at any given point in time. Certain trading strategies involve market depth.
+        See <a href="https://databento.com/microstructure/level-3-market-data">What is level3 market data</a>
     </p>
     <p>
-        The scale of this data will require something like C++ and also database such as KDB+ .
+        This is the most granular market data. It is tick-by-tick and individual trades.
+        The simulator aggregate prices and volume, but tick data allows us to reproduce the <a href="https://en.wikipedia.org/wiki/Order_book">https://en.wikipedia.org/wiki/Order_book</a> 
+        at any given point in time. Certain trading strategies involve market depth.
+        This is literally where Flow Traders derive their name from: analyzing order flow: <a href="https://en.wikipedia.org/wiki/Order_flow_trading">https://en.wikipedia.org/wiki/Order_flow_trading</a>
+    </p>
+    <p>
+        The scale of this data will require something like C++ and a time series database. 
         This will also involve undersanding market making and implementing <a href="https://en.wikipedia.org/wiki/Order_matching_system">order-matching system</a>. 
     </p>
 
@@ -494,6 +504,10 @@
             <img src="assets/ide.png" alt="buffee text slayer" class="screenshot">
         </figure>
 
+     <h2>Workstream #8: AI</h2>
+
+     
     </div>
+
 </body>
 </html>
