@@ -198,74 +198,172 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Algo Trading Platform</h1>
-            <p class="subtitle">A collaboration opportunity for QF graduate students</p>
-        </header>
+        
+        <p>In securing a job, the most impactful experiences:</p>
+        
+        <ol>
+            <li>Relevant work experience</li>
+            <li>Internship</li>
+            <li>Relevant Project Work. Sometimes, this is more valuable than 1 or 2.</li>
+        </ol>
 
-        <p>This is an outline for a project where we build an algo trading platform. The goal is hands-on experience with financial data and technology: data engineering, data analysis, algo trading, and compilers.</p>
+        <p>
+            I'm seeking QF students who want to have #3 on their CVs. 
+            We will colloborate on a software <span style="text-decoration: line-through">project</span> system that 
+            you can point to as evidence of (1) concrete technical skills and (2) exposure to financial markets.
+        </p>
 
-        <p>"Quant finance" programs contrast with "computational finance" programs that involve more interfacing with markets using code&mdash;understanding the technical infrastructure of exchanges. Baruch's MFE program is rated #1.  partly because they emphasize programming; graduates disproportionately work as quant devs, which has higher minimum salaries. Even if you don't aspire to be a quant developer, understanding market microstructure matters for taking liquidity and orderflow into account.</p>
+        <p>
+            A skillgap between "quant finance" and "computational finance" is technical aspects of electronic markets. Even if you do not intend on being a quant developer, 
+            expertise in market microstructure is useful to quant finance. Trading and Strategy is just the top of the iceberg. 90% of QF is 
+            the data and technical infrastructure. Understanding how this infrastructure is built will better equip you to be 
+            a quant analyst, researcher, trader. For some firms, especially "colloborative funds" like TwoSigma and Jane Street, 
+            being a tech company is their DNA and market edge.
+        </p>
+
+        <p>
+            In general, there is a gap between academia and industry needs. For example, every job in QF will require SQL.
+            Through this colloboration, SQL will be one of the concrete skills you can highlight on your resume.
+        </p>
 
         <h2>Precedent</h2>
 
-        <p><strong>Quantopian</strong> was a platform where users developed and shared algo trading strategies in Python. You could backtest against historical data and simulate P&L with walk-forward tests. Point72 (Steve Cohen) was an investor; the business model was crowd-sourced hedge fund&mdash;pick the best strategies, trade with their capital, share profits with authors. They shut down in 2020.</p>
+        <p><strong>Quantopian</strong> was a platform where users developed and shared algo trading strategies written in Python. You could backtest against historical data and simulate P&L with walk-forward tests. Point72 (Steve Cohen) was a VC; the business model was crowd-sourced hedge fund&mdash;aggregate the best strategies, trade with their own capital, share profits with authors.
+            In my opinion, this business model is difficult to align with VC funding schedules. They were ahead of their time, running out of runway in 2020 before the rise of LLMs. 
+        </p>
 
         <blockquote>
             "To fill the gap left by Quantopian, traders have relied on open source projects like Gekko and Freqtrade. The first companies to capitalize were CrunchDAO, QuantConnect, and Numerai. Recently, cloud-based tools emerged for crypto: 3commas, Mudrex, and Tuned."<br>
             &mdash; <a href="https://en.wikipedia.org/wiki/Quantopian">Wikipedia</a>
         </blockquote>
 
-        <p>The space remains niche and the tech last-gen. Meanwhile, there's a confluence of factors:</p>
+        <p>The space remains niche and the tech last-gen. Meanwhile, there's a confluence of:</p>
 
         <ul>
             <li>Millions of laid-off tech workers with time, money, and skills to trade</li>
-            <li>Oversupply of CS grads; employers favor senior hires who can harness AI</li>
-            <li>QF going mainstream&mdash;no longer esoterica from <em>The Big Short</em></li>
-            <li>Retail traders worldwide dialing in (Korean senior citizens taking stock trading courses, etc.)</li>
-            <li>Proliferation of new markets: Polymarket, crypto, prediction markets</li>
-            <li>A US administration that doesn't shy away from market-moving headlines</li>
+            <li>Oversupply of CS grads; employers favor senior hires who can lever AI</li>
+            <li>QF is part of the lexicon and no longer esoterica by Ryan Gosling in <em>The Big Short</em></li>
+            <li>Retail traders are dialing in globally (Korean retail traders DDOS Western stock live streams. Their senior citizens enrolling in Technical Analysis coursees)</li>
+            <li>Interest in markets: Polymarket, crypto, prediction markets</li>
+            <li>A US administration that doesn't shy away from market-moving headlines 
+                and encouraging inflows: <a href="https://www.irs.gov/trumpaccounts">https://www.irs.gov/trumpaccounts</a>
+            </li>
         </ul>
 
-        <p>Interest in quant trading is higher than ever. Competition for institutional jobs is fierce. Groups <a href="https://www.instagram.com/reel/DSura5YiPpC">aspiring to start hedge funds from dorm rooms</a> garner millions of views. AI has enabled non-software engineers to build non-trivial applications. This project: let non-engineers build their own algo trading strategies. Robinhood democratized trading for retail; this is an attempt at democratizing algo trading.</p>
+        <p>Interest in quant trading is higher than ever. Competition for institutional jobs is fierce. Rebels <a href="https://www.instagram.com/reel/DSura5YiPpC">aspiring to start hedge funds from dorm rooms</a> garner millions of views.</p>
+        <p>AI has enabled non-engineers to build software applications and businesses. Why not algo trading strategies and firms? If Robinhood democratized trading for retail; this project aim to democratize algo trading.</p>
 
-        <h2>The Simulator</h2>
+        <h2>Workstream #1: Historical Trading Simulator</h2>
 
-        <p>In <em>Dune</em>, characters possess prescience&mdash;the ability to see the future. Retail traders have a similar fantasy: travel back in time, knowing what you know now, and make trades. People joke about this on WallStreetBets. What if it doesn't have to be a joke?</p>
+        <p>In <em>Dune</em>, characters possess prescience&mdash;the ability to see the future.
+            Prescient enables space navigation by avoiding debris. In combat, people outmaneuveur opponents.
+        </p>
+        <p>Another sci-fi plot device is to travel back in time, use the knowledge you have now, profit.
+            People joke about these "what ifs" scenarios on WallStreetBets. 
+            It's a pain in the ass to actually lookup historical prices and sequence out these 
+            these trades in Excel. LLMs are also not well optimized 
+            for these stock market queries especially outside the largest 100 stocks, and I'll loop back to how 
+            we can build a better LLM later.
+        </p>
 
-        <p>I built a prototype "game" where you're back in January 2020 before the GameStop short squeeze with $1,000. Each trading day, you decide: buy, sell, or hold.</p>
+        <p>I built a "game" where you start in January 2020 before the GameStop short squeeze with $1,000. On each trading day, you can: (1) buy a ticker, (2) sell the ticker you are holding, or (3) continue to the next trading.</p>
 
         <figure>
             <img src="assets/manual.png" alt="Perfect-Liquidity Simulator" class="screenshot">
-            <figcaption>The "Perfect-Liquidity Simulator" prototype. Pick a stock, step through trading days, build a position.</figcaption>
         </figure>
 
-        <p>A little 200% gain here, a 500% gain there, and a few hundred clicks later you've turned $1,000 into millions. What if instead of daily, this was hourly? Every minute? Higher resolution data opens new possibilities.</p>
+        <p>200% here, 500% there, and a few hundred clicks later you're a millionaire.</p>
 
-        <h3>Realism</h3>
-
-        <p>The simulator assumes <strong>perfect liquidity</strong>. Real trading involves:</p>
+        <p>In the real world:</p>
 
         <ul>
-            <li><strong>Slippage:</strong> You want to sell 100,000 shares at $X. Only 50,000 find buyers.</li>
-            <li><strong>Market impact:</strong> Selling 1,000,000 shares? Participants notice and back away.</li>
-            <li><strong>Execution:</strong> Algorithms must handle partial fills and recalibrate positions.</li>
+            <li><strong>Slippage:</strong> You want to buy 100,000 shares at $5. Only 50,000 is filled because the stock rose higher.</li>
+            <li><strong>Market impact:</strong> Jensen Huang's net worth = number of NVDA shares owned * NVDA stock price.
+                He can never actually sell those many shares at the market price without dragging the price down.
+            </li>
+            <li>Brokerage fees and commissions for every trade</li>
         </ul>
 
-        <p>There's meaningful work to make this simulator realistic&mdash;potentially overlapping with simulation coursework.</p>
+        <p>
+            There will be disparity between a trading strategy and <strong>trade execution</strong>. 
+            Firms also have to consider tax implications. One area of work is incorporating these factors.
+            In doing so, you have talking points when interviewing with trading firms.
+        </p>
+        
+        <p>
+            Another area of work is making the simulator more general:
+        </p>
+        <ul>
+            <li><strong>Granularity:</strong> Instead of each turn being a day, we can generalize to every hour. This would require getting more granular data then just 
+                the stock's OLHC (open, low, high, close) price on the day. The intradata data for this simulator came from scraping from Yahoo! Finance. Supporting 
+                interday trading would require gettiing other data sources.
+            </li>
+            <li><strong>Portfolio:</strong> Being able to hold more than 1 stock at a same time. This also means specifying how many shares to buy 
+                and sell instead of the current "full porting" (spend all the cash you have on a single stock) simplication.
+            </li>
+            <li><strong>Volume:</strong> This goes hand in hand with granularity. If in an hour, only 10000 shares were historically moved, 
+                it might not have been possible to trade 100,000 shares. This gets into issues with the orderbook (see workstream #6)
+            </li>
+        </ul>
 
-        <h2>From Clicking to Code</h2>
+        <p>
+            Your ideas and improvements are welcomed!
+        </p>
+    
+        <h2>Workstream #2: Algo trading</h2>
 
-        <p>Instead of manually clicking, specify code that clicks for you. Implement a function that takes today's prices and returns a decision. We call your function on each day of the simulation.</p>
-
+        <p>Instead of manually clicking, people can code a "bot" to do it. It's a function as follows:</p>
+        
+        <ul>
+            <li><strong>Input: </strong> the current position, data such as today's opening price, yesterday's closing price, the weather, and more.</li>
+            <li><strong>Output: </strong> buy, sell, or hold</li>
+        </ul>
+        
         <figure>
             <img src="assets/algo.png" alt="Algo trading interface" class="screenshot">
             <figcaption>Left: code editor with a simple random-walk strategy. Right: simulator state. Bottom: input data passed to the function, output decision.</figcaption>
         </figure>
 
-        <p>Voilà: a crude algo trading backtesting platform. It doesn't have to be limited to simulation. Link a brokerage account, execute the user-specified function once per trading day&mdash;now we have a crude live trading platform.</p>
+        <p>Voilà: a crude algo trading R&D and backtesting platform.</p>
 
-        <h2>Data Platform</h2>
+        <p>Past performance is not indicative of future performance.
+            Users want to know if the algo trading strategy was overfitted to the past and will work moving forward. 
+            Simple, we run the same user-specified function for the next 30 days (in simulator) and provide a dashboard where 
+            they can review the performance of all their trading strategies. Voilà: walk-forward testing.
+        </p>
+
+        <p>
+            There will be various other dashboards and tools to review things such as variance, drawdown, Sharpe ratio. 
+            Users can compare performance versus index performance (did the strategy just do well because the entire market 
+            moved up, or because of inflation?). Basically, packaging up all the statistics and math stuff we're learning right here. 
+        </p>
+
+        <h2>Workstream #3: Market Interface</h2>
+
+        <p>
+            Instead of walk-forward test against the simulator, we talk to an actual stock brokerage that the user has linked
+            to execute the trades such as Charles Schwab, 
+            Interactive Brokers or Alpaca. Voilà: an algo trading platform. If we support crypto, Coinbase and Binance. 
+        </p>
+
+        <p>
+            Having experiences with these brokerages would move you to the front of the line if you wanted to apply for a job. 
+            If we allowed people buying Vanguard ETFs, we integrate with Vanguard directly. There's also sorts of details 
+            to be learnt about Vanguard ETFs in the process. 
+        </p>
+
+        <p>Users can allocate a $1,000 account to one strategy, $2,000 to another. We provide a user interface 
+            to review the aggregate performance. Voilà: multi-strat diversication. 
+        </p>
+
+        <p>
+            Once we're brave enough, we integrate directly with exchanges. We wouldn't be able to allow 
+            the general public to use this feature because we'd have to be regulated financial institution / broker. 
+            Suppose we just expose this feature for admin users such as ourselves. This integration would involve C++,
+            the FIX protocol, and deep experience with market microstructure. 
+        </p>
+
+        <h2>Workstream #4: Data Platform</h2>
 
         <p>Currently the app has 5 years of data for 6 stocks:</p>
 
@@ -279,36 +377,73 @@
         <ul>
             <li>15+ years of historical data</li>
             <li>3,000+ US stocks, European stocks, Asian stocks, crypto, any tradeable asset</li>
+            <li>
+                Option chains and Derivatives
+            </li>
+            <li>Bonds</li>
+            <li>Commodoties</li>
             <li>Not just price&mdash;volume, fundamentals, alternative data</li>
         </ul>
 
-        <p>Once we provide an interface for querying arbitrary data, we've formed the basis of a data platform. Aggregate news? Now we're approaching Bloomberg and <a href="https://godelterminal.com/">Shkreli's Godel Terminal</a>. Add social media sentiment? Something genuinely new.</p>
+        <p>
+            Each of these asset classes have to be treated differently. For bonds, we want to represent data about maturity 
+            and interest rates. For stocks, dividend payouts, normalizing for stock splits, accounting for delistings, IPOs. 
+            I have no idea what information might be relevant for corn futures. 
+            For options, we want to collect data about open contracts.
+            This is the whole point where we learn more about these different asset classes. 
+        </p>
 
-        <h2>Why JavaScript</h2>
+        <p>Once we provide an interface for querying arbitrary data, we've formed the basis of a data platform. Aggregate news? Now we're approaching Bloomberg and <a href="https://godelterminal.com/">Shkreli's Godel Terminal</a>. Add social media sentiment from Instagram and TikTok? Relatively new because 
+        this information is generally siloed, atleast to the general public</p>
 
-        <p>We're using JavaScript instead of Python for the algo trading language. JavaScript is the most popular programming language by many metrics, yet there's no finance ecosystem around it. There are millions of webdevs who'd try algo trading if the barrier were lower.</p>
+        <p>
+            Ocean tide schedule. Traffic information. Crime data. There's no limit. Are the information useful and relevant? 
+            Well, we will <strong><a href="https://en.wikipedia.org/wiki/Eating_your_own_dog_food">dogfood</a></strong> and make this platform a place where we can R&D trading strategies 
+            off this <strong>alternative data</strong>
+        </p>
 
-        <h3>The Python ecosystem</h3>
+        <p>
+            This workstream involves working on Large Scale Batch Processing data pipeline. 
+            The repository is here: <a href="https://github.com/varrockbank/equityzukan">https://github.com/varrockbank/equityzukan</a>. 
+            It'll be a giant directed-acyclic-graph where you add a node that collects or transform data. 
+            Data collection might involve a program that pulls weather data from a government source or a social media website.
+        </p>
 
-        <p>Python has NumPy, Pandas, and now Polars (Optiver is a sponsor). At Jane Street, one intern project was <a href="https://blog.janestreet.com/what-the-interns-have-wrought-2024-edition-index/">porting Polars to OCaml</a>. If we port Polars to JavaScript, that's a talking point for interviews at firms using Polars.</p>
+        <img src="assets/etl.png">
 
-        <h3>Developer mindshare</h3>
+        <h2>Workstream #5: Language ecosystem and Compilers</h2>
 
-        <p>Python is popular for data work because people created data libraries for it, then a community formed. This is developer mindshare&mdash;an anthropological phenomenon, not Python being fundamentally superior. Stats/ML/finance libraries don't exist for JavaScript yet. We have the opportunity to pioneer them.</p>
+        <p>JavaScript will be the DSL (domain specific language) for algo trading. JavaScript is the most popular programming language in the world, yet there's no finance ecosystem or "mindshare" around it, yet.
+            There are millions of webdevs who'd try algo trading if the barrier were lower.
+        </p>
 
-        <p>If developer mindshare shifts toward JavaScript for finance, you're a key figure in the supply chain. Jane Street famously hired most of the OCaml ecosystem contributors.</p>
+        <h3>DataFrame</h3>
 
-        <h2>Compilers</h2>
+        <p>Python has NumPy, Pandas, and now Polars (Optiver is a sponsor). At Jane Street, one intern project was <a href="https://blog.janestreet.com/what-the-interns-have-wrought-2024-edition-index/">porting Polars to OCaml</a>. If we port Polars to JavaScript, that's a talking point for interviews at firms using or interested in migrating to Polars.</p>
 
-        <p>Another workstream: taking users' JavaScript algos and converting them to something fast&mdash;C++ (lingua franca of quant finance) or Rust (gaining popularity). Working with programming languages at this meta level is compilers work.</p>
+        <h3>Ecosystem</h3>
 
-        <aside>
-            <p>Most of Jane Street's technical interns work on language/compilers projects.</p>
+        <p> JavaScript is not known for Stats/ML/finance libraries like Python.
+            For example, SciKit Learn in Python.
+            This is an opportunity to pioneer data libraries that other people can depend on. 
+            You will solidify your stats knowledge in the process. 
+            Since Python already has these libraries, 
+            there is little opportunity for us to be a key contributor there. </p>
+            <p>
+            Python is popular for data work because people created data libraries for it, then a community formed. 
+            This is developer mindshare&mdash;an anthropological phenomenon, not Python being fundamentally superior. 
+            We can do the same and be a critical part of the ecosystem and supply chain. Jane Street famously picked up most of the OCaml ecosystem contributors.</p>
+
+        <h3>Compilers</h3>
+
+        <p>Another workstream: taking users' JavaScript algos and converting them to something fast&mdash;C++ (lingua franca of quant finance) or Rust (gaining popularity) 
+            when we actually execute in the real world. This is compilers work. It's worth pointing out that most of Jane Street's technical interns work on language/compilers projects.</p>
         </aside>
 
-        <h2>C++</h2>
+        <h3>C++</h3>
 
-        <p>Every HFT fund uses C++. Stock exchanges are written in C++. Various aspects of this project will involve C++ code:</p>
+        <p>Every HFT fund uses C++. Stock exchanges are written in C++. Most of finance use C++. 
+            Various aspects of this project will involve C++ code:</p>
 
         <ul>
             <li>High-performance backtesting engine</li>
@@ -317,30 +452,48 @@
             <li>Latency-critical execution paths</li>
         </ul>
 
-        <h2>What You'll Learn</h2>
+        
+    <h2>Workstream #6: Level3</h2>
+    <p>
+        This is the most granular market data. It is tick-by-tick and individual trades.
+        The simulator aggregate prices and volume, but tick data allows us to reproduce the orderbook 
+        at any given point in time. Certain trading strategies involve market depth.
+    </p>
+    <p>
+        The scale of this data will require something like C++ and also database such as KDB+ .
+        This will also involve undersanding market making and implementing <a href="https://en.wikipedia.org/wiki/Order_matching_system">order-matching system</a>. 
+    </p>
 
-        <div class="skills">
-            <span>Data Engineering</span>
-            <span>Data Analysis</span>
-            <span>Market Microstructure</span>
-            <span>Backtesting</span>
-            <span>JavaScript</span>
-            <span>C++</span>
-            <span>Rust</span>
-            <span>Compilers</span>
-            <span>System Design</span>
-            <span>Exchange Protocols</span>
-            <span>Time Series Data</span>
-            <span>API Design</span>
-        </div>
+    <h2>Workstream #7: IDE</h2>
 
-        <div class="contact">
-            <strong>Interested?</strong> This is a hands-on opportunity to build something real while developing skills that matter for quant roles. <a href="mailto:you@example.com">Get in touch</a>.
-        </div>
+    <p>
+        R has RStudios. Java has Intellij. 
+        These IDEs understand the language and give the user cues. For us, this would be:
+    </p>
+    <ul>
+        <li>
+            provide autocomplete if users type out a stock ticker when implementing their trading strategy. 
+        </li>
+        <li>
+            warn about numerical and rounding issues 
+        </li>
+        <li>
+            complain that the user forgot to return a buy/sell/hold decision in one of their code branches
+        </li>
+         <li>
+            warn about logic bugs such as the user attempting to buy more stock then they have more money for, in a non-margin account
+        </li>
+    </ul>
 
-        <footer>
-            <p>A collaboration opportunity for QF graduate students.</p>
-        </footer>
+    <p>
+        The AI coding agent Cursor is built around VSCode/Monaco. JaneStreet built around Emacs. 
+        I've built a new text editor for the web here: <a href="https://varrockbank.github.io/buffee/">Buffee</a>.
+    </p>
+
+       <figure>
+            <img src="assets/ide.png" alt="buffee text slayer" class="screenshot">
+        </figure>
+
     </div>
 </body>
 </html>
