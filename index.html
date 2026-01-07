@@ -339,21 +339,21 @@
         <p>
 
             I'm seeking QF students who want to have #3 on their CVs. 
-            We will colloborate on a software <span style="text-decoration: line-through">project</span> system that 
+            We will collaborate on a software <span style="text-decoration: line-through">project</span> system that 
             you can point to as evidence of (1) concrete technical skills and (2) exposure to financial markets.
         </p>
 
         <p>
-            A skillgap between "quant finance" and "computational finance" is technical aspects of electronic markets. Even if you do not intend on being a quant developer, 
-            expertise in market microstructure is useful to quant finance. Trading and Strategy is just the top of the iceberg. 90% of QF is 
-            the data and technical infrastructure. Understanding how this infrastructure is built will better equip you to be 
-            a quant analyst, researcher, trader. For some firms, especially "colloborative funds" like TwoSigma and Jane Street, 
+            A skill gap between "quant finance" and "computational finance" is technical aspects of electronic markets. Even if you do not intend on being a quant developer,
+            expertise in market microstructure is useful to quant finance. Trading and Strategy is just the tip of the iceberg. 90% of QF is
+            the data and technical infrastructure. Understanding how this infrastructure is built will better equip you to be
+            a quant analyst, researcher, trader. For some firms, especially "collaborative funds" like Two Sigma and Jane Street,
             being a tech company is their DNA and market edge.
         </p>
 
         <p>
             In general, there is a gap between academia and industry needs. For example, every job in QF will require SQL.
-            Through this colloboration, SQL will be one of the concrete skills you can highlight on your resume.
+            Through this collaboration, SQL will be one of the concrete skills you can highlight on your resume.
         </p>
 
         <h2 id="precedent"><span class="title">Precedent</span></h2>
@@ -372,8 +372,8 @@
         <ul>
             <li>Millions of laid-off tech workers with time, money, and skills to trade</li>
             <li>Oversupply of CS grads; employers favor senior hires who can lever AI</li>
-            <li>QF is part of the lexicon and no longer esoterica by Ryan Gosling in <em>The Big Short</em></li>
-            <li>Retail traders are dialing in globally (Korean retail traders DDOS Western stock live streams. Their senior citizens enrolling in Technical Analysis coursees)</li>
+            <li>QF is part of the lexicon and no longer esoterica introduced by Ryan Gosling in <em>The Big Short</em></li>
+            <li>Retail traders are dialing in globally (Korean retail traders DDOS Western stock live streams; their senior citizens are enrolling in technical analysis courses)</li>
             <li>Interest in markets: Polymarket, crypto, prediction markets</li>
             <li>A US administration that doesn't shy away from market-moving headlines 
                 and encouraging inflows: <a href="https://www.irs.gov/trumpaccounts">https://www.irs.gov/trumpaccounts</a>
@@ -381,22 +381,22 @@
         </ul>
 
         <p>Interest in quant trading is higher than ever. Competition for institutional jobs is fierce. Rebels <a href="https://www.instagram.com/reel/DSura5YiPpC">aspiring to start hedge funds from dorm rooms</a> garner millions of views.</p>
-        <p>AI has enabled non-engineers to build software applications and businesses. Why not algo trading strategies and firms? If Robinhood democratized trading for retail; this project aim to democratize algo trading.</p>
+        <p>AI has enabled non-engineers to build software applications and businesses. Why not algo trading strategies and firms? If Robinhood democratized trading for retail, this project aims to democratize algo trading.</p>
 
         <h2 id="simulator"><span class="label">Workstream 01</span><span class="title">Historical Trading Simulator</span></h2>
 
         <p>In <em>Dune</em>, characters possess prescience&mdash;the ability to see the future.
-            Prescient enables space navigation by avoiding debris. In combat, people outmaneuveur opponents.
+            Prescience enables space navigation by avoiding debris. In combat, people outmaneuver opponents.
         </p>
-        <p>Another sci-fi plot device is to travel back in time, use the knowledge you have now, profit.
-            People joke about these "what ifs" scenarios on WallStreetBets. 
-            It's a pain in the ass to actually lookup historical prices and sequence out these 
-            these trades in Excel. LLMs are also not well optimized 
-            for these stock market queries especially outside the largest 100 stocks, and I'll loop back to how 
+        <p>Another sci-fi plot device is to travel back in time, use the knowledge you have now, and profit.
+            People joke about these "what if" scenarios on WallStreetBets.
+            It's a pain to actually look up historical prices and sequence out
+            these trades in Excel. LLMs are also not well optimized
+            for stock market queries, especially outside the largest 100 stocks, and I'll loop back to how
             we can build a better LLM later.
         </p>
 
-        <p>I built a "game" where you start in January 2020 before the GameStop short squeeze with $1,000. On each trading day, you can: (1) buy a ticker, (2) sell the ticker you are holding, or (3) continue to the next trading.</p>
+        <p>I built a "game" where you start in January 2020 before the GameStop short squeeze with $1,000. On each trading day, you can: (1) buy a ticker, (2) sell the ticker you are holding, or (3) continue to the next trading day.</p>
 
         <figure>
             <img src="assets/manual.png" alt="Perfect-Liquidity Simulator" class="screenshot">
@@ -407,7 +407,7 @@
         <p>In the real world:</p>
 
         <ul>
-            <li><strong>Slippage:</strong> You want to buy 100,000 shares at $5. Only 50,000 is filled because the stock rose higher.</li>
+            <li><strong>Slippage:</strong> You want to buy 100,000 shares at $5. Only 50,000 are filled because the stock rose higher.</li>
             <li><strong>Market impact:</strong> Jensen Huang's net worth = number of NVDA shares owned * NVDA stock price.
                 He can never actually sell those many shares at the market price without dragging the price down.
             </li>
@@ -424,12 +424,12 @@
             Another area of work is making the simulator more general:
         </p>
         <ul>
-            <li><strong>Granularity:</strong> Instead of each turn being a day, we can generalize to every hour. This would require getting more granular data then just 
-                the stock's OLHC (open, low, high, close) price on the day. The intradata data for this simulator came from scraping from Yahoo! Finance. Supporting 
-                interday trading would require gettiing other data sources.
+            <li><strong>Granularity:</strong> Instead of each turn being a day, we can generalize to every hour. This would require getting more granular data than just
+                the stock's OHLC (open, high, low, close) price on the day. The intraday data for this simulator came from scraping Yahoo! Finance. Supporting
+                intraday trading would require getting other data sources.
             </li>
-            <li><strong>Portfolio:</strong> Being able to hold more than 1 stock at a same time. This also means specifying how many shares to buy 
-                and sell instead of the current "full porting" (spend all the cash you have on a single stock) simplication.
+            <li><strong>Portfolio:</strong> Being able to hold more than one stock at the same time. This also means specifying how many shares to buy
+                and sell instead of the current "full porting" (spend all the cash you have on a single stock) simplification.
             </li>
             <li><strong>Volume:</strong> This goes hand in hand with granularity. If in an hour, only 10000 shares were historically moved, 
                 it might not have been possible to trade 100,000 shares. This gets into issues with the orderbook (see workstream #6)
@@ -487,18 +487,18 @@
 
         
         <p>
-            Having experiences with these brokerages would move you to the front of the line if you wanted to apply for a job. 
-            If we allowed people buying Vanguard ETFs, we integrate with Vanguard directly. There's also sorts of details 
-            to be learnt about Vanguard ETFs in the process. 
+            Having experience with these brokerages would move you to the front of the line if you wanted to apply for a job.
+            If we allow people to buy Vanguard ETFs, we integrate with Vanguard directly. There are all sorts of details
+            to be learned about Vanguard ETFs in the process.
         </p>
 
-        <p>Users can allocate a $1,000 account to one strategy, $2,000 to another. We provide a user interface 
-            to review the aggregate performance. Voilà: multi-strat diversication. 
+        <p>Users can allocate a $1,000 account to one strategy, $2,000 to another. We provide a user interface
+            to review the aggregate performance. Voilà: multi-strat diversification.
         </p>
 
         <p>
             Once we're brave enough, we integrate directly with exchanges. We wouldn't be able to allow 
-            the general public to use this feature because we'd have to be regulated financial institution / broker. 
+            the general public to use this feature because we'd have to be a regulated financial institution / broker. 
             Suppose we just expose this feature for admin users such as ourselves. This integration would involve C++,
             the FIX protocol, and deep experience with market microstructure. 
         </p>
@@ -531,17 +531,17 @@
         </ul>
 
         <p>
-            Each of these asset classes have to be treated differently. For bonds, we want to represent data about maturity 
-            and interest rates. For stocks, dividend payouts, normalizing for stock splits, accounting for delistings, IPOs. 
-            I have no idea what information might be relevant for corn futures. 
+            Each of these asset classes has to be treated differently. For bonds, we want to represent data about maturity
+            and interest rates. For stocks, dividend payouts, normalizing for stock splits, accounting for delistings, IPOs.
+            I have no idea what information might be relevant for corn futures.
             For options, we want to collect data about open contracts.
-            This is the whole point where we learn more about these different asset classes. 
+            This is the whole point—we learn more about these different asset classes.
         </p>
 
         <img src="assets/query.png">
 
-        <p>Once we provide an interface for querying arbitrary data, we've formed the basis of a data platform. Aggregate news? Now we're approaching Bloomberg and <a href="https://godelterminal.com/">Shkreli's Godel Terminal</a>. Add social media sentiment from Instagram and TikTok? Relatively new because 
-        this information is generally siloed, atleast to the general public</p>
+        <p>Once we provide an interface for querying arbitrary data, we've formed the basis of a data platform. Aggregate news? Now we're approaching Bloomberg and <a href="https://godelterminal.com/">Shkreli's Godel Terminal</a>. Add social media sentiment from Instagram and TikTok? Relatively new because
+        this information is generally siloed, at least to the general public.</p>
 
         <img src="assets/news.png">
 
@@ -550,7 +550,7 @@
         </p>
 
         <p>
-            Ocean tide schedule. Traffic information. Crime data. There's no limit. Are the information useful and relevant? 
+            Ocean tide schedule. Traffic information. Crime data. There's no limit. Is the information useful and relevant? 
             Well, we will <strong><a href="https://en.wikipedia.org/wiki/Eating_your_own_dog_food">dogfood</a></strong> and make this platform a place where we can R&D trading strategies 
             off this <strong>alternative data</strong>
         </p>
@@ -596,7 +596,7 @@
 
         <h3>C++</h3>
 
-        <p>Every HFT fund uses C++. Stock exchanges are written in C++. Most of finance use C++. 
+        <p>Every HFT fund uses C++. Stock exchanges are written in C++. Most of finance uses C++.
             Various aspects of this project will involve C++ code:</p>
 
         <ul>
@@ -613,38 +613,38 @@
     </p>
     <p>
         This is the most granular market data. It is tick-by-tick and individual trades.
-        The simulator aggregate prices and volume, but tick data allows us to reproduce the <a href="https://en.wikipedia.org/wiki/Order_book">https://en.wikipedia.org/wiki/Order_book</a> 
+        The simulator aggregates prices and volume, but tick data allows us to reproduce the <a href="https://en.wikipedia.org/wiki/Order_book">order book</a>
         at any given point in time. Certain trading strategies involve market depth.
-        This is literally where Flow Traders derive their name from: analyzing order flow: <a href="https://en.wikipedia.org/wiki/Order_flow_trading">https://en.wikipedia.org/wiki/Order_flow_trading</a>
+        This is literally where Flow Traders derive their name from: analyzing <a href="https://en.wikipedia.org/wiki/Order_flow_trading">order flow</a>.
     </p>
     <p>
-        The scale of this data will require something like C++ and a time series database. 
-        This will also involve undersanding market making and implementing <a href="https://en.wikipedia.org/wiki/Order_matching_system">order-matching system</a>. 
+        The scale of this data will require something like C++ and a time series database.
+        This will also involve understanding market making and implementing an <a href="https://en.wikipedia.org/wiki/Order_matching_system">order-matching system</a>.
     </p>
 
     <h2 id="ide"><span class="label">Workstream 07</span><span class="title">IDE</span></h2>
 
     <p>
-        R has RStudios. Java has Intellij. 
+        R has RStudio. Java has IntelliJ.
         These IDEs understand the language and give the user cues. For us, this would be:
     </p>
     <ul>
         <li>
-            provide autocomplete if users type out a stock ticker when implementing their trading strategy. 
+            Provide autocomplete if users type out a stock ticker when implementing their trading strategy
         </li>
         <li>
-            warn about numerical and rounding issues 
+            Warn about numerical and rounding issues
         </li>
         <li>
-            complain that the user forgot to return a buy/sell/hold decision in one of their code branches
+            Complain that the user forgot to return a buy/sell/hold decision in one of their code branches
         </li>
-         <li>
-            warn about logic bugs such as the user attempting to buy more stock then they have more money for, in a non-margin account
+        <li>
+            Warn about logic bugs such as the user attempting to buy more stock than they have money for, in a non-margin account
         </li>
     </ul>
 
     <p>
-        The AI coding agent Cursor is built around VSCode/Monaco. JaneStreet built around Emacs. 
+        The AI coding agent Cursor is built around VSCode/Monaco. Jane Street built theirs around Emacs.
         I've built a new text editor for the web here: <a href="https://varrockbank.github.io/buffee/">Buffee</a>.
     </p>
 
@@ -656,20 +656,20 @@
 
      <img src="assets/bot.png">
      <p>
-        There will be an AI agent that can view the user's source code files. 
+        There will be an AI agent that can view the user's source code files.
         It has access to the data platform and understands how to map user queries in
-        human language to SQL queries. It understands the algo trading protocol of 
-        input / output. It also has access to various parts of the website and can 
-        review things like P&L
+        human language to SQL queries. It understands the algo trading protocol of
+        input/output. It also has access to various parts of the website and can
+        review things like P&L.
      </p>
 
      <p>
-        We are not developing a new foundational model. We will augment an 
-        existing by providing it context. This is mostly an engineering/product problem 
-        moreso than PhD level research, albeit you are free to do as much research as you want.
-        Imagine you pasting a giant file into ChatGPT. Instead, we just feed an LLM the data platform 
-        and tell it remember this across all users. On individual user queries, it looks at 
-        the user's source code. 
+        We are not developing a new foundational model. We will augment an
+        existing one by providing it context. This is mostly an engineering/product problem,
+        more so than PhD-level research, albeit you are free to do as much research as you want.
+        Imagine pasting a giant file into ChatGPT. Instead, we feed an LLM the data platform
+        and tell it to remember this across all users. On individual user queries, it looks at
+        the user's source code.
      </p>
 
     </div>
