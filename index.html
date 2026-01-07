@@ -458,9 +458,7 @@
         <img src="assets/forward.png" alt="Forwarding testing" class="screenshot">
 
         <p>
-            There will be various other dashboards and tools to review things such as variance, drawdown, Sharpe ratio. 
-            Users can compare performance versus index performance (did the strategy just do well because the entire market 
-            moved up, or because of inflation?). Basically, packaging up all the statistics and math stuff we're learning right here. 
+            Dashboards for variance, drawdown, Sharpe ratio. Compare strategy performance against an index—did it beat the market, or just ride it? This is where we apply the statistics we're learning in class.
         </p>
 
         <h2 id="market"><span class="label">Workstream 03</span><span class="title">Market Interface</span></h2>
@@ -488,10 +486,10 @@
         </p>
 
         <p>
-            Once we're brave enough, we integrate directly with exchanges. We wouldn't be able to allow 
-            the general public to use this feature because we'd have to be a regulated financial institution / broker. 
+            Once we're brave enough, we integrate directly with exchanges. We wouldn't be able to allow
+            the general public to use this feature because we'd have to be a regulated financial institution / broker.
             Suppose we just expose this feature for admin users such as ourselves. This integration would involve C++,
-            the FIX protocol, and deep experience with market microstructure. 
+            the FIX protocol, and deep experience with market microstructure.
         </p>
 
         <figure>
@@ -522,22 +520,19 @@
         </ul>
 
         <p>
-            Each of these asset classes has to be treated differently. For bonds, we want to represent data about maturity
-            and interest rates. For stocks, dividend payouts, normalizing for stock splits, accounting for delistings, IPOs.
-            I have no idea what information might be relevant for corn futures.
-            For options, we want to collect data about open contracts.
-            This is the whole point—we learn more about these different asset classes.
+            Each of these asset classes have different aspects and quirks.
+            Part of the exercise is normalizing this and other data into into tabular form, stored as a SQL database that users can query with SQL. 
         </p>
 
         <img src="assets/query.png">
 
-        <p>Once we provide an interface for querying arbitrary data, we've formed the basis of a data platform. Aggregate news? Now we're approaching Bloomberg and <a href="https://godelterminal.com/">Shkreli's Godel Terminal</a>. Add social media sentiment from Instagram and TikTok? Relatively new because
+        <p>Aggregate news? Now we're approaching Bloomberg and <a href="https://godelterminal.com/">Shkreli's Godel Terminal</a>. Add social media sentiment from Instagram and TikTok? Relatively new because
         this information is generally siloed, at least to the general public.</p>
 
         <img src="assets/news.png">
 
         <p>
-            These are just lists of data that users can access in their algo trading.
+            Note: everything is data that the AI agent and user algo trades can access. For example, taking as input a news article and returning a trading decision. 
         </p>
 
         <p>
@@ -547,9 +542,9 @@
         </p>
 
         <p>
-            This workstream involves working on data pipeline.
+            This workstream involves working on "big" data pipeline.
             The repository is here: <a href="https://github.com/varrockbank/equityzukan">https://github.com/varrockbank/equityzukan</a>. 
-            You may have heard of MapReduce. The current implementation uses the <a href="https://spark.apache.org/">Apache Spark</a>
+            The current implementation uses the <a href="https://spark.apache.org/">Apache Spark</a>
             framework. The orchestrator is <a href="https://airflow.apache.org/">Apache Airflow</a>. You can see 
             this tech stack is aligned with Data Engineering at Optiver: <a href="https://optiver.com/working-at-optiver/career-opportunities/8206990002/?gh_src=6lx5qioq2us">Data Engineer (Commodities)</a>
         </p>
