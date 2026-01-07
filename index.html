@@ -66,6 +66,32 @@
             padding-top: 0;
         }
 
+        h2 .label {
+            display: block;
+            font-family: 'SF Mono', Menlo, Monaco, monospace;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        h2 .title {
+            display: block;
+        }
+
+        h2 .title::first-letter {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3.2em;
+            font-weight: 400;
+            color: #e07020;
+            float: left;
+            line-height: 0.65;
+            margin-right: 0.08em;
+            margin-top: 0.05em;
+        }
+
         h3 {
             font-size: 1.1rem;
             font-weight: 600;
@@ -186,9 +212,92 @@
             font-weight: 600;
         }
 
+        /* Table of Contents */
+        .toc {
+            margin-bottom: 64px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .toc h1 {
+            font-size: 2.5rem;
+            margin-bottom: 4px;
+        }
+
+        .toc-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .reading-time {
+            font-family: 'SF Mono', Menlo, Monaco, monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .toc ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            column-count: 2;
+            column-gap: 48px;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .toc a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .toc a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Scroll Progress */
+        .scroll-widget {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            text-align: right;
+        }
+
+        .back-to-top {
+            display: block;
+            font-family: 'SF Mono', Menlo, Monaco, monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 8px;
+            padding: 6px 12px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.15s ease;
+        }
+
+        .back-to-top:hover {
+            color: var(--accent);
+            background: var(--bg-code);
+            border-color: var(--border);
+        }
+
+        .scroll-progress {
+            font-family: 'SF Mono', Menlo, Monaco, monospace;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+        }
+
         @media (max-width: 600px) {
             body { font-size: 16px; }
             .container { padding: 32px 16px 32px 16px; }
+            .toc ol { column-count: 1; }
             h1 { font-size: 1.6rem; }
             h2 { font-size: 1.25rem; margin: 36px 0 12px; padding-top: 20px; }
             h3 { font-size: 1.05rem; }
@@ -203,7 +312,26 @@
 </head>
 <body>
     <div class="container">
-        
+        <nav class="toc">
+            <h1>Algo Trading Platform</h1>
+            <p class="toc-subtitle">A collaboration opportunity for QF students</p>
+            <p class="reading-time" id="reading-time"></p>
+            <ol>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#precedent">Precedent</a></li>
+                <li><a href="#simulator">Historical Trading Simulator</a></li>
+                <li><a href="#algo">Algo Trading</a></li>
+                <li><a href="#market">Market Interface</a></li>
+                <li><a href="#data">Data Platform</a></li>
+                <li><a href="#language">Language Ecosystem & Compilers</a></li>
+                <li><a href="#level3">Level 3 Data</a></li>
+                <li><a href="#ide">IDE</a></li>
+                <li><a href="#ai">AI</a></li>
+            </ol>
+        </nav>
+
+        <h2 id="introduction"><span class="label">Introduction</span><span class="title">Overview</span></h2>
+
         <p>In securing a job, the most impactful experiences:</p>
         
         <ol>
@@ -231,7 +359,7 @@
             Through this colloboration, SQL will be one of the concrete skills you can highlight on your resume.
         </p>
 
-        <h2>Precedent</h2>
+        <h2 id="precedent"><span class="label">Background</span><span class="title">Precedent</span></h2>
 
         <p><strong>Quantopian</strong> was a platform where users developed and shared algo trading strategies written in Python. You could backtest against historical data and simulate P&L with walk-forward tests. Point72 (Steve Cohen) was a VC; the business model was crowd-sourced hedge fund&mdash;aggregate the best strategies, trade with their own capital, share profits with authors.
             In my opinion, this business model is difficult to align with VC funding schedules. They were ahead of their time, running out of runway in 2020 before the rise of LLMs. 
@@ -258,7 +386,7 @@
         <p>Interest in quant trading is higher than ever. Competition for institutional jobs is fierce. Rebels <a href="https://www.instagram.com/reel/DSura5YiPpC">aspiring to start hedge funds from dorm rooms</a> garner millions of views.</p>
         <p>AI has enabled non-engineers to build software applications and businesses. Why not algo trading strategies and firms? If Robinhood democratized trading for retail; this project aim to democratize algo trading.</p>
 
-        <h2>Workstream #1: Historical Trading Simulator</h2>
+        <h2 id="simulator"><span class="label">Workstream 01</span><span class="title">Historical Trading Simulator</span></h2>
 
         <p>In <em>Dune</em>, characters possess prescience&mdash;the ability to see the future.
             Prescient enables space navigation by avoiding debris. In combat, people outmaneuveur opponents.
@@ -315,7 +443,7 @@
             Your ideas and improvements are welcomed!
         </p>
     
-        <h2>Workstream #2: Algo trading</h2>
+        <h2 id="algo"><span class="label">Workstream 02</span><span class="title">Algo Trading</span></h2>
 
         <p>Instead of manually clicking, people can code a "bot" to do it. It's a function as follows:</p>
         
@@ -343,7 +471,7 @@
             moved up, or because of inflation?). Basically, packaging up all the statistics and math stuff we're learning right here. 
         </p>
 
-        <h2>Workstream #3: Market Interface</h2>
+        <h2 id="market"><span class="label">Workstream 03</span><span class="title">Market Interface</span></h2>
 
         <p>
             Instead of walk-forward test against the simulator, we talk to an actual stock brokerage that the user has linked
@@ -368,7 +496,7 @@
             the FIX protocol, and deep experience with market microstructure. 
         </p>
 
-        <h2>Workstream #4: Data Platform</h2>
+        <h2 id="data"><span class="label">Workstream 04</span><span class="title">Data Platform</span></h2>
 
         <p>Currently the app has 5 years of data for 6 stocks:</p>
 
@@ -417,7 +545,7 @@
 
         <img src="assets/etl.png">
 
-        <h2>Workstream #5: Language ecosystem and Compilers</h2>
+        <h2 id="language"><span class="label">Workstream 05</span><span class="title">Language Ecosystem & Compilers</span></h2>
 
         <p>JavaScript will be the DSL (<a href="https://en.wikipedia.org/wiki/Domain-specific_language">domain specific language</a>) for algo trading. JavaScript is the most popular programming language in the world, yet there's no finance ecosystem or "mindshare" around it, yet.
             There are millions of webdevs who'd try algo trading if the barrier were lower.
@@ -459,7 +587,7 @@
         </ul>
 
         
-    <h2>Workstream #6: Level3</h2>
+    <h2 id="level3"><span class="label">Workstream 06</span><span class="title">Level 3 Data</span></h2>
     <p>
         See <a href="https://databento.com/microstructure/level-3-market-data">What is level3 market data</a>
     </p>
@@ -474,7 +602,7 @@
         This will also involve undersanding market making and implementing <a href="https://en.wikipedia.org/wiki/Order_matching_system">order-matching system</a>. 
     </p>
 
-    <h2>Workstream #7: IDE</h2>
+    <h2 id="ide"><span class="label">Workstream 07</span><span class="title">IDE</span></h2>
 
     <p>
         R has RStudios. Java has Intellij. 
@@ -504,10 +632,36 @@
             <img src="assets/ide.png" alt="buffee text slayer" class="screenshot">
         </figure>
 
-     <h2>Workstream #8: AI</h2>
+     <h2 id="ai"><span class="label">Workstream 08</span><span class="title">AI</span></h2>
 
-     
+
     </div>
 
+    <div class="scroll-widget">
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <div class="scroll-progress" id="scroll-progress">0%</div>
+    </div>
+
+    <script>
+        // Reading time calculation
+        const text = document.querySelector('.container').innerText;
+        const words = text.trim().split(/\s+/).length;
+        const minutes = Math.ceil(words / 200);
+        document.getElementById('reading-time').textContent = 'Estimated reading time: ' + minutes + ' min';
+
+        // Jump to introduction
+        if (!window.location.hash) {
+            window.location.hash = 'introduction';
+        }
+
+        // Scroll progress
+        const progressEl = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.round((scrollTop / docHeight) * 100);
+            progressEl.textContent = progress + '%';
+        });
+    </script>
 </body>
 </html>
