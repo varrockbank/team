@@ -313,11 +313,9 @@
 <body>
     <div class="container">
         <nav class="toc">
-            <h1>Algo Trading Platform</h1>
             <p class="toc-subtitle">A collaboration opportunity for QF students</p>
             <p class="reading-time" id="reading-time"></p>
             <ol>
-                <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#precedent">Precedent</a></li>
                 <li><a href="#simulator">Historical Trading Simulator</a></li>
                 <li><a href="#algo">Algo Trading</a></li>
@@ -330,9 +328,7 @@
             </ol>
         </nav>
 
-        <h2 id="introduction"><span class="label">Introduction</span><span class="title">Overview</span></h2>
-
-        <p>In securing a job, the most impactful experiences:</p>
+        <p>Most impactful on your resume:</p>
         
         <ol>
             <li>Relevant work experience</li>
@@ -341,6 +337,7 @@
         </ol>
 
         <p>
+
             I'm seeking QF students who want to have #3 on their CVs. 
             We will colloborate on a software <span style="text-decoration: line-through">project</span> system that 
             you can point to as evidence of (1) concrete technical skills and (2) exposure to financial markets.
@@ -359,7 +356,7 @@
             Through this colloboration, SQL will be one of the concrete skills you can highlight on your resume.
         </p>
 
-        <h2 id="precedent"><span class="label">Background</span><span class="title">Precedent</span></h2>
+        <h2 id="precedent"><span class="title">Precedent</span></h2>
 
         <p><strong>Quantopian</strong> was a platform where users developed and shared algo trading strategies written in Python. You could backtest against historical data and simulate P&L with walk-forward tests. Point72 (Steve Cohen) was a VC; the business model was crowd-sourced hedge fund&mdash;aggregate the best strategies, trade with their own capital, share profits with authors.
             In my opinion, this business model is difficult to align with VC funding schedules. They were ahead of their time, running out of runway in 2020 before the rise of LLMs. 
@@ -459,13 +456,15 @@
 
         <p>Voilà: a crude algo trading R&D and backtesting platform.</p>
 
-        <p>You can try the prototype here: <a href="https://varrockbank.github.io/marketbuffer/">https://varrockbank.github.io/marketbuffer/</a></p>
+        <p>Try the prototype here: <a href="https://varrockbank.github.io/marketbuffer/">https://varrockbank.github.io/marketbuffer/</a></p>
 
         <p>Past performance is not indicative of future performance.
             Users want to know if the algo trading strategy was overfitted to the past and will work moving forward. 
             Simple, we run the same user-specified function for the next 30 days (in simulator) and provide a dashboard where 
             they can review the performance of all their trading strategies. Voilà: walk-forward testing.
         </p>
+
+        <img src="assets/forward.png" alt="Forwarding testing" class="screenshot">
 
         <p>
             There will be various other dashboards and tools to review things such as variance, drawdown, Sharpe ratio. 
@@ -478,9 +477,15 @@
         <p>
             Instead of walk-forward test against the simulator, we talk to an actual stock brokerage that the user has linked
             to execute the trades such as Charles Schwab, 
-            Interactive Brokers or Alpaca. Voilà: an algo trading platform. If we support crypto, Coinbase and Binance. 
+            Interactive Brokers or <a href="https://alpaca.markets/">Alpaca</a>. Voilà: an algo trading platform. If we support crypto, Coinbase and Binance. 
         </p>
+        
+         <figure>
+            <img src="assets/alpaca.png">
+            <figcaption>Python code to call Alpaca API and issue market order</figcaption>
+        </figure>
 
+        
         <p>
             Having experiences with these brokerages would move you to the front of the line if you wanted to apply for a job. 
             If we allowed people buying Vanguard ETFs, we integrate with Vanguard directly. There's also sorts of details 
@@ -497,6 +502,11 @@
             Suppose we just expose this feature for admin users such as ourselves. This integration would involve C++,
             the FIX protocol, and deep experience with market microstructure. 
         </p>
+
+        <figure>
+            <img src="assets/fix.png">
+            <figcaption>Structure of a FIX message</figcaption>
+        </figure>
 
         <h2 id="data"><span class="label">Workstream 04</span><span class="title">Data Platform</span></h2>
 
@@ -516,7 +526,7 @@
                 Option chains and Derivatives
             </li>
             <li>Bonds</li>
-            <li>Commodoties</li>
+            <li>commodities</li>
             <li>Not just price&mdash;volume, fundamentals, alternative data</li>
         </ul>
 
@@ -535,6 +545,9 @@
 
         <img src="assets/news.png">
 
+        <p>
+            These are just lists of data that users can access in their algo trading.
+        </p>
 
         <p>
             Ocean tide schedule. Traffic information. Crime data. There's no limit. Are the information useful and relevant? 
