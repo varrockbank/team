@@ -459,6 +459,8 @@
 
         <p>Voilà: a crude algo trading R&D and backtesting platform.</p>
 
+        <p>You can try the prototype here: <a href="https://varrockbank.github.io/marketbuffer/">https://varrockbank.github.io/marketbuffer/</a></p>
+
         <p>Past performance is not indicative of future performance.
             Users want to know if the algo trading strategy was overfitted to the past and will work moving forward. 
             Simple, we run the same user-specified function for the next 30 days (in simulator) and provide a dashboard where 
@@ -526,8 +528,13 @@
             This is the whole point where we learn more about these different asset classes. 
         </p>
 
+        <img src="assets/query.png">
+
         <p>Once we provide an interface for querying arbitrary data, we've formed the basis of a data platform. Aggregate news? Now we're approaching Bloomberg and <a href="https://godelterminal.com/">Shkreli's Godel Terminal</a>. Add social media sentiment from Instagram and TikTok? Relatively new because 
         this information is generally siloed, atleast to the general public</p>
+
+        <img src="assets/news.png">
+
 
         <p>
             Ocean tide schedule. Traffic information. Crime data. There's no limit. Are the information useful and relevant? 
@@ -634,6 +641,23 @@
 
      <h2 id="ai"><span class="label">Workstream 08</span><span class="title">AI</span></h2>
 
+     <img src="assets/bot.png">
+     <p>
+        There will be an AI agent that can view the user's source code files. 
+        It has access to the data platform and understands how to map user queries in
+        human language to SQL queries. It understands the algo trading protocol of 
+        input / output. It also has access to various parts of the website and can 
+        review things like P&L
+     </p>
+
+     <p>
+        We are not developing a new foundational model. We will augment an 
+        existing by providing it context. This is mostly an engineering/product problem 
+        moreso than PhD level research, albeit you are free to do as much research as you want.
+        Imagine you pasting a giant file into ChatGPT. Instead, we just feed an LLM the data platform 
+        and tell it remember this across all users. On individual user queries, it looks at 
+        the user's source code. 
+     </p>
 
     </div>
 
